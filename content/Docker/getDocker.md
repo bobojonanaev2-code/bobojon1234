@@ -103,6 +103,26 @@ docker image inspect hello-world
 ```shell
 docker rm 6f72bfc0ed02
 ```
+Получить сводку по диску Docker
+```shell
+docker system df
+```
+Получить сводку по всем томам
+```shell
+docker volume ls
+```
+```shell
+# Список томов с размером
+docker system df -v
+```
+Очистить все ненужные тома
+```shell
+docker volume prune -a
+```
+и для кэша всех сборок
+```shell
+docker builder prune
+```
 
 > Удаление контейнера не приводит к удалению Docker образа!
 
@@ -368,5 +388,9 @@ docker image prune -a
 ```shell
 docker rmi -f $(docker images -q)
 ```
+
+### Ссылки
+
+- [Docker Reminder](https://www.altlinux.org/Docker_Reminder)
 
 > Если вы обнаружили ошибку в этом тексте - сообщите пожалуйста автору!
