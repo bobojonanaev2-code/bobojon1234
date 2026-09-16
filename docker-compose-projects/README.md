@@ -7,7 +7,7 @@
 | № | Проект | Папка | Статус |
 |---|--------|-------|--------|
 | 1 | Joomla + MariaDB | [`01-joomla/`](01-joomla/) | ✅ |
-| 2 | WordPress + MySQL | `02-wordpress/` | ⏳ |
+| 2 | WordPress + MySQL | [`02-wordpress/`](02-wordpress/) | ✅ |
 | 3 | MySQL + phpMyAdmin | `03-mysql-phpmyadmin/` | ⏳ |
 | 4 | PostgreSQL | `04-postgresql/` | ⏳ |
 | 5 | PostgreSQL + pgAdmin | `05-postgresql-pgadmin/` | ⏳ |
