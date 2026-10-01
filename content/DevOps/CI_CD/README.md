@@ -11,10 +11,15 @@
     - [C++](/content/DevOps/CI_CD/Pipelines/cpp.md)
     - [Hello Java!](/content/DevOps/CI_CD/Pipelines/hello_java.md)
     - [Pipeline CI на Rust в GitHub Actions 1](/content/DevOps/CI_CD/Pipelines/Rust_CI_1.md)
-    - [Pipeline CI на Rust в GitHub Actions 2](/content/DevOps/CI_CD/Pipelines/Rust_CI_2.md)
     - []()
-- CD
-    - [CI/CD на Rust с публикацией в GHCR](/content/DevOps/CI_CD/Pipelines/CD_Rust_CI_2.md)
-    - []()
+-  CI/CD
+    - [CI/CD на Rust CLI с публикацией в GHCR](/content/DevOps/CI_CD/Pipelines/CI_CD_Rust.md)
+    - [CI/CD на Go CLI с публикацией в GHCR](/content/DevOps/CI_CD/Pipelines/CI_CD_Go.md)
+    - [CI/CD на Go CLI с публикацией бинарников в GitHub Releases](/content/DevOps/CI_CD/Pipelines/Go_bin.md)
+    - [CI/CD Python+PyInstaller CLI с публикацией бинарников в GitHub Releases](/content/DevOps/CI_CD/Pipelines/Python_PyInstaller_bin.md)
+    - [CI/CD на C#/.NET CLI с публикацией бинарников в GitHub Releases](/content/DevOps/CI_CD/Pipelines/Dotnet.md)
+    - [CI/CD с Go GUI с публикацией бинарников в GitHub Releases](/content/DevOps/CI_CD/Pipelines/CD_Go_GUI.md)
+    - [Hex Loader: CI/CD с Go GUI с публикацией бинарников в GitHub Releases](https://gitflic.ru/project/rurewa/mfua/blob?file=content/DevOps/CI_CD/Pipelines/HexLoader.md&branch=master&mode=markdown)
+    - [CI/CD с приложением на Go (Fyne) - Arduino Manager GUI, с публикацией бинарников в GitHub Releases](/content/DevOps/CI_CD/Pipelines/ArduinoManager.md)
 
 > Если вы обнаружили ошибку в этом тексте - сообщите пожалуйста автору!
