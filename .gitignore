@@ -43,3 +43,4 @@
 
 # apps
 *.vscodedocker-compose-projects/09-cloudbeaver/workspace/
+docker-compose-projects/09-cloudbeaver/workspace/
