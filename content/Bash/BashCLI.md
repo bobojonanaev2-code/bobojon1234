@@ -435,7 +435,15 @@ snap install asciiquarium && asciiquarium
 ```shell
 docker run --rm -it bcbcarl/hollywood
 ```
+Остановить показ по `Ctrl+C` и выйти `exit`
+
 Мнямка
 ```shell
 nyancat
 ```
+
+***
+
+### Ресурсы
+
+- [Linux Cheat Sheet — шпаргалка по командам Linux](https://github.com/justxor/Linux-/)
