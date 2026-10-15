@@ -11,7 +11,7 @@
 | 3 | Node.js / TypeScript REST API | [`03-nodejs-rest-api/`](03-nodejs-rest-api/) | [my-node-app](https://github.com/bobojonanaev2-code/my-node-app) | ✅ |
 | 4 | Go | [`04-go/`](04-go/) | [my-go-app](https://github.com/bobojonanaev2-code/my-go-app) | ✅ |
 | 5 | Rust CLI | [`05-rust-ci/`](05-rust-ci/) | [my-rust-app](https://github.com/bobojonanaev2-code/my-rust-app) | ✅ |
-| 6 | PHP + MySQL | [`06-php/`](06-php/) | [my-php-app](https://github.com/bobojonanaev2-code/my-php-app) | ✅ |
+| 6 | PHP + MySQL | [`06-php-mysql/`](06-php-mysql/) | [my-php-app](https://github.com/bobojonanaev2-code/my-php-app) | ✅ |
 | 7 | C++ | `07-cpp/` | — | ⏳ |
 | 8 | Hello Java! | `08-hello-java/` | — | ⏳ |
 | 9 | Pipeline CI на Rust 1 | `09-rust-ci-1/` | — | ⏳ |
