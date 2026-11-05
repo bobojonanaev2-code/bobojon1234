@@ -3,18 +3,44 @@
 ## Навигация по предмету
 
 Теория
-- [Данные и работа с ними](/content/Courses/Basics_database_design/content/Data.md)
-- [Вводная лекция по БД](/content/Courses/Basics_database_design/content/Begin.md)
+- [Данные](/content/Courses/Basics_database_design/content/Data.md)
+- [Основы проектирования баз данных](/content/Courses/Basics_database_design/content/Begin.md)
 - [Классификация Баз Данных](/content/Courses/Basics_database_design/content/All_db.md)
 - [ER-диаграмы](/content/Courses/Basics_database_design/content/ER_dia.md)
+- [Алиасы в SQL](/content/Courses/Basics_database_design/content/Docs/Aliases.md)
+- [Дамп БД](/content/Courses/Basics_database_design/content/Docs/dump.md)
+- [Оператор `IN` в SQL](/content/Courses/Basics_database_design/content/Docs/IN.md)
+- [Оператор `JOIN` в SQL](/content/Courses/Basics_database_design/content/Docs/JOIN.md)
+- [Теория множеств и базы данных](/content/Courses/Basics_database_design/content/Docs/set_theory.md)
+- [Понятие кортежа в БД](/content/Courses/Basics_database_design/content/Docs/tuple.md)
+- [Файлы БД](/content/Courses/Basics_database_design/content/Docs/SQL_File.md)
+- [Нормализация данных: простое руководство с примерами](/content/Courses/Basics_database_design/content/Docs/data_normalization.md)
+- [Лог MySQL](/content/Courses/Basics_database_design/content/Docs/log.md)
+- [Основные движки MySQL и их назначение](/content/Courses/Basics_database_design/content/Docs/storage_engine.md)
+- [Краткий обзор движков таблиц MySQL](https://habr.com/ru/articles/64851/)
 
-Практика
+
+### Практика
 
 - Docker
   - [Подробные уроки по Docker для начинающих](https://gitflic.ru/project/rurewa/altlinux/blob?file=content%2FDocker%2FDocker.md&branch=master&mode=markdown)
   - [Работа с базой данных внутри контейнера](/content/Basics_database_design/db_base.md)
 - Базы Данных
   - [Интерактивная работа с MySQL в изолированном окружении Docker](/content/Courses/Basics_database_design/content/Content/MySQL.md)
+  - [Основные операции на примере двух таблиц «products 1» и «products 2»](/content/Courses/Basics_database_design/content/bd/Products.md)
+  - [Руководство по представлениям (VIEW) в MySQL](/content/Courses/Basics_database_design/content/bd/VIEW_MySQL.md)
+  - [Нормализация данных. Практическое руководство 1](/content/Courses/Basics_database_design/content/bd/Normalization_1.md)
+  - [Лабораторная работа по нормализации данных в БД](/content/Courses/Basics_database_design/content/bd/Normalization_2.md)
+
+***
+
+Полезные ссылки:
+
+- [Air flights database analysis](https://github.com/igsuvorov/Air_flights_database_analysis?ysclid=mw0buiq89f403052923)
+- [Демонстрационная база данных](https://postgrespro.ru/education/demodb?ysclid=mw0btgkgnm893794791)
+- [test_db](https://github.com/datacharmer/test_db?ysclid=mw0bxj6m4109233723)
+
+
 ---
 
 Дисциплина **«Основы проектирования баз данных»** — это фундаментальный курс, который закладывает теоретическую и методологическую базу для всей последующей работы с базами данных. Если провести аналогию со строительством, то это курс «архитектурного проектирования» — здесь вы учитесь не класть кирпичи (писать SQL-запросы), а создавать чертежи, по которым эти кирпичи будут уложены правильно, надёжно и эффективно.
@@ -218,5 +244,6 @@
 - [LibreDB Studio](https://www.opennet.ru/opennews/art.shtml?num=66216)
 - [Практическое владение языком SQL](https://sql-ex.ru/)
 - [Создание ER-диаграмм](https://app.diagrams.net/)
+- [Тренажёр SQL ](https://sql.coderang.dev/)
 
 > Если вы обнаружили ошибку в этом тексте - сообщите пожалуйста автору!
