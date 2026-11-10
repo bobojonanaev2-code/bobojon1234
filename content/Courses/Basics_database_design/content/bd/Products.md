@@ -1,5 +1,8 @@
 # Основные SQL-операции на примере двух таблиц «products 1» и «products 2»
 
+
+> **Задание выполнять в VS Code - Git-Bash - Docker CLI!!**
+
 Все команды и запросы можно выполнить в любом клиенте **MySQL 8.0.31+** (в Docker-контейнере). Для MySQL 8.0.31+ доступны операторы `EXCEPT` и `INTERSECT`; для более старых версий даны альтернативы.
 
 ---
@@ -28,7 +31,7 @@ docker volume prune -a
 
 - Создайте отдельный каталог `products-mysql` (`mkdir products-mysql`) и перейдите в него (`cd products-mysql`).
 - Создайте в каталоге `products-mysql` файл `my.cnf` (для корректного отображения кириллицы) с содержимым:
-```shell
+```ini
 [mysqld]
 character-set-server = utf8mb4
 collation-server = utf8mb4_unicode_ci
@@ -39,7 +42,7 @@ default-character-set = utf8mb4
 [mysql]
 default-character-set = utf8mb4
 ```
-Контейнер с официального образа **MySQL**:
+Контейнер с официального образа **MySQL** (Git-Bash):
 ```bash
 docker run --name products-mysql \
   -e MYSQL_ROOT_PASSWORD=123 \
@@ -302,7 +305,7 @@ LEFT JOIN products2 t2 ON t1.name = t2.name;
 ```shell
 docker exec -e MYSQL_PWD=123 products-mysql mysqldump -uroot shop > dump.sql
 ```
-после чего в папке `products-mysql` появится текстовый файл `dump.sql`, содержимое которого можно увидеть командой
+после чего в папке `products-mysql` появится текстовый файл `dump.sql`, содержимое которого можно увидеть командой (Git-Bash):
 ```shell
 cat dump.sql
 ```
@@ -379,8 +382,7 @@ SELECT * FROM products2;
 
 ## 🔹 Шаг 7. Опубликовать БД в своём GitHub
 
-- Закоммитить и запушить дамп БД этого задания
-- Прислать ссылку преподавателю
+Результат оформить в виде отдельного `README.md` со скриншотами результатов ваших действий, дампом и логом (лог-файл должен содержать только ваши действия) в этой же папке и прислать ссылку преподавателю.
 
 ---
 
