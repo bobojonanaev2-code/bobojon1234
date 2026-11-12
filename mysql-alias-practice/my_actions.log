@@ -1,0 +1,104 @@
+2026-11-12T11:50:07.475627Z	   10 Query	select @@version_comment limit 1
+2026-11-12T11:50:12.033579Z	   10 Query	CREATE DATABASE alias_db CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci
+2026-11-12T11:50:12.782394Z	   10 Query	SELECT DATABASE()
+2026-11-12T11:50:12.790677Z	   10 Query	show databases
+2026-11-12T11:50:12.804888Z	   10 Query	show tables
+2026-11-12T11:50:18.038694Z	   10 Query	CREATE TABLE customers (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL UNIQUE,
+  city VARCHAR(100),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+2026-11-12T11:50:18.142571Z	   10 Query	CREATE TABLE orders (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  customer_id INT NOT NULL,
+  order_date DATE NOT NULL,
+  amount DECIMAL(10,2) NOT NULL,
+  status VARCHAR(20) DEFAULT 'new',
+  FOREIGN KEY (customer_id) REFERENCES customers(id)
+)
+2026-11-12T11:50:18.964972Z	   10 Query	CREATE TABLE employees (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  position VARCHAR(100),
+  manager_id INT,
+  FOREIGN KEY (manager_id) REFERENCES employees(id)
+)
+2026-11-12T11:50:23.974724Z	   10 Query	INSERT INTO customers (name, email, city) VALUES
+('Иван Иванов','ivan@example.com','Москва'),
+('Пётр Петров','petr@example.com','Санкт-Петербург'),
+('Мария Сидорова','maria@example.com','Москва'),
+('Алексей Смирнов','alex@example.com','Казань'),
+('Ольга Кузнецова','olga@example.com','Новосибирск')
+2026-11-12T11:50:24.019605Z	   10 Query	INSERT INTO orders (customer_id, order_date, amount, status) VALUES
+(1,'2026-10-01',1500.00,'paid'),
+(1,'2026-10-05',2300.50,'paid'),
+(2,'2026-10-03',800.00,'new'),
+(3,'2026-10-07',4200.00,'paid'),
+(3,'2026-10-10',1100.00,'cancelled'),
+(4,'2026-10-12',950.00,'new')
+2026-11-12T11:50:24.866646Z	   10 Query	INSERT INTO employees (name, position, manager_id) VALUES
+('Анна Петрова','Генеральный директор',NULL),
+('Игорь Смирнов','Финансовый директор',1),
+('Елена Кузнецова','Технический директор',1),
+('Дмитрий Орлов','Ведущий разработчик',3),
+('Ольга Зайцева','Разработчик',3),
+('Сергей Волков','Бухгалтер',2)
+2026-11-12T11:50:28.171204Z	   10 Query	SHOW TABLES
+2026-11-12T11:50:28.174515Z	   10 Query	SELECT * FROM customers
+2026-11-12T11:50:28.175050Z	   10 Query	SELECT * FROM orders
+2026-11-12T11:50:29.031614Z	   10 Query	SELECT * FROM employees
+2026-11-12T11:50:43.484830Z	   10 Query	SELECT customers.name, orders.amount
+FROM customers
+JOIN orders ON customers.id = orders.customer_id
+2026-11-12T11:50:49.965755Z	   10 Query	SELECT c.name, o.amount
+FROM customers c
+JOIN orders o ON c.id = o.customer_id
+2026-11-12T11:51:01.827187Z	   10 Query	SELECT name AS customer_name,
+       email AS contact_email
+FROM customers
+2026-11-12T11:51:06.490690Z	   10 Query	SELECT customer_id,
+       COUNT(*) AS order_count,
+       SUM(amount) AS total_amount
+FROM orders
+GROUP BY customer_id
+ORDER BY total_amount DESC
+2026-11-12T11:51:23.311100Z	   10 Query	SELECT c.name AS customer,
+       o.order_date,
+       o.amount,
+       o.amount * 2 AS double_amount
+FROM customers c
+JOIN orders o ON c.id = o.customer_id
+WHERE o.status = 'paid'
+ORDER BY double_amount DESC
+2026-11-12T11:51:28.218902Z	   10 Query	SELECT e.name AS employee,
+       m.name AS manager
+FROM employees e
+JOIN employees m ON e.manager_id = m.id
+2026-11-12T11:51:42.751702Z	   10 Query	SELECT c.name, o.total
+FROM customers c
+JOIN (
+  SELECT customer_id, SUM(amount) AS total
+  FROM orders
+  GROUP BY customer_id
+) o ON c.id = o.customer_id
+WHERE o.total > 2000
+2026-11-12T11:51:45.946087Z	   10 Query	SELECT c.name,
+       (SELECT COUNT(*)
+        FROM orders o
+        WHERE o.customer_id = c.id) AS order_count
+FROM customers c
+2026-11-12T11:51:59.663440Z	   10 Query	SELECT id, amount * 2 AS double_amount
+FROM orders
+WHERE double_amount > 1000
+2026-11-12T11:52:05.635880Z	   10 Query	SELECT id, amount * 2 AS double_amount
+FROM orders
+WHERE amount * 2 > 1000
+2026-11-12T11:52:09.809108Z	   10 Query	SELECT customer_id, SUM(amount) AS total_amount
+FROM orders
+GROUP BY customer_id
+HAVING total_amount > 2000
+2026-11-12T11:52:27.962819Z	   11 Query	select @@version_comment limit 1
+2026-11-12T11:52:27.963272Z	   11 Query	SET GLOBAL general_log='OFF'
