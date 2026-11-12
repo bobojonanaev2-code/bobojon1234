@@ -1,0 +1,59 @@
+/usr/sbin/mysqld, Version: 8.0.46 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2026-11-12T11:10:39.188418Z	    9 Quit	
+2026-11-12T11:10:48.533228Z	   10 Connect	root@localhost on  using Socket
+2026-11-12T11:10:48.533496Z	   10 Query	select @@version_comment limit 1
+2026-11-12T11:10:52.195482Z	   10 Query	CREATE DATABASE shop
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci
+2026-11-12T11:10:52.940901Z	   10 Query	SELECT DATABASE()
+2026-11-12T11:10:52.941171Z	   10 Init DB	shop
+2026-11-12T11:10:52.942147Z	   10 Query	show databases
+2026-11-12T11:10:52.945079Z	   10 Query	show tables
+2026-11-12T11:10:56.769649Z	   10 Query	CREATE TABLE products1 (
+    name VARCHAR(100) NOT NULL,
+    price INT NOT NULL
+)
+2026-11-12T11:10:57.555918Z	   10 Query	CREATE TABLE products2 (
+    name VARCHAR(100) NOT NULL,
+    price INT NOT NULL
+)
+2026-11-12T11:11:02.258537Z	   10 Query	INSERT INTO products1 (name, price) VALUES
+('Дыни', 800),
+('Клубника', 150),
+('Яблоки', 120),
+('Лимоны', 200)
+2026-11-12T11:11:02.938481Z	   10 Query	INSERT INTO products2 (name, price) VALUES
+('Дыни', 800),
+('Клубника', 150),
+('Каштаны', 200),
+('Хурма', 350)
+2026-11-12T11:11:08.095326Z	   10 Query	SHOW TABLES
+2026-11-12T11:11:08.104625Z	   10 Query	SELECT * FROM products1
+2026-11-12T11:11:08.712563Z	   10 Query	SELECT * FROM products2
+2026-11-12T11:11:20.889144Z	   10 Query	SELECT * FROM products1 WHERE price > 150
+2026-11-12T11:11:24.824033Z	   10 Query	SELECT name FROM products1
+2026-11-12T11:11:37.938390Z	   10 Query	SELECT name FROM products1
+UNION
+SELECT name FROM products2
+2026-11-12T11:11:42.670226Z	   10 Query	SELECT name, price FROM products1
+EXCEPT
+SELECT name, price FROM products2
+2026-11-12T11:11:46.982581Z	   10 Query	SELECT name, price FROM products1
+INTERSECT
+SELECT name, price FROM products2
+2026-11-12T11:11:59.110330Z	   10 Query	SELECT t1.name AS name1, t1.price AS price1,
+       t2.name AS name2, t2.price AS price2
+FROM products1 t1
+CROSS JOIN products2 t2
+2026-11-12T11:12:03.287005Z	   10 Query	SELECT t1.name, t1.price AS price1, t2.price AS price2
+FROM products1 t1
+JOIN products2 t2 ON t1.name = t2.name
+2026-11-12T11:12:07.973493Z	   10 Query	SELECT t1.name, t1.price AS price1, t2.price AS price2
+FROM products1 t1
+LEFT JOIN products2 t2 ON t1.name = t2.name
+2026-11-12T11:12:20.159215Z	   10 Quit	
+2026-11-12T11:12:26.066727Z	   11 Connect	root@localhost on  using Socket
+2026-11-12T11:12:26.066894Z	   11 Query	select @@version_comment limit 1
+2026-11-12T11:12:26.067142Z	   11 Query	SET GLOBAL general_log='OFF'
